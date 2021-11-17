@@ -3,4 +3,11 @@
     <string name="title_activity_main">Maze game</string>
     <string name="title_laberinto">MAZE</string>
     <string name="btn_jugar">Play</string>
+    <string name="title_screen">Please select game!</string>
+    <string name="option_screen1">OR create a new game</string>
+    <string name="name_game">New game name</string>
+    <string name="btn_up">UP</string>
+    <string name="btn_left">LEFT</string>
+    <string name="btn_right">RIGHT</string>
+    <string name="btn_down">DOWN</string>
 </resources>

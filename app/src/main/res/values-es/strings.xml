@@ -3,4 +3,11 @@
     <string name="title_activity_main">Juego del laberinto</string>
     <string name="title_laberinto">LABERINTO</string>
     <string name="btn_jugar">Jugar</string>
+    <string name="title_screen">Por favor seleccione el juego!</string>
+    <string name="option_screen1">O cree un nuevo juego</string>
+    <string name="name_game">Nombre del nuevo juego</string>
+    <string name="btn_up">ARRIBA</string>
+    <string name="btn_left">IZQUIERDA</string>
+    <string name="btn_right">DERECHA</string>
+    <string name="btn_down">ABAJO</string>
 </resources>
