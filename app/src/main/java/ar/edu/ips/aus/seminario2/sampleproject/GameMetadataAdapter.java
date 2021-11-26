@@ -65,7 +65,7 @@ public class GameMetadataAdapter
         };
 
         //linea para filtrar por news
-        mDatabaseReference.orderByChild("status").equalTo("NEW").addChildEventListener(mChildEventListener);
+        //mDatabaseReference.orderByChild("status").equalTo("NEW").addChildEventListener(mChildEventListener);
 
         //linea para filtrar por running
         //mDatabaseReference.orderByChild("status").equalTo("RUNNING").addChildEventListener(mChildEventListener);
@@ -75,7 +75,7 @@ public class GameMetadataAdapter
 
 
         //original
-        //mDatabaseReference.addChildEventListener(mChildEventListener);
+        mDatabaseReference.addChildEventListener(mChildEventListener);
     }
 
     @NonNull
