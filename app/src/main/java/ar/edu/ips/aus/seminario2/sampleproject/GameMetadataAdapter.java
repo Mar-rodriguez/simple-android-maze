@@ -63,7 +63,19 @@ public class GameMetadataAdapter
 
             }
         };
-        mDatabaseReference.addChildEventListener(mChildEventListener);
+
+        //linea para filtrar por news
+        mDatabaseReference.orderByChild("status").equalTo("NEW").addChildEventListener(mChildEventListener);
+
+        //linea para filtrar por running
+        //mDatabaseReference.orderByChild("status").equalTo("RUNNING").addChildEventListener(mChildEventListener);
+
+        //linea para filtrar por paused
+        //mDatabaseReference.orderByChild("status").equalTo("PAUSED").addChildEventListener(mChildEventListener);
+
+
+        //original
+        //mDatabaseReference.addChildEventListener(mChildEventListener);
     }
 
     @NonNull
