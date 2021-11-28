@@ -55,6 +55,9 @@ public class MazeBoardActivity extends AppCompatActivity
         int height = board.getVerticalTileCount();
         int width = board.getHorizontalTileCount();
 
+        int xfinal = board.getExitX();
+        int yFinal = board.getExitY();
+
         imageViews = new ImageView[width * height];
 
         int resId = 0;
@@ -71,12 +74,17 @@ public class MazeBoardActivity extends AppCompatActivity
             table.addView(row);
 
             for (int j=0; j<width; j++){
+
                 BoardPiece piece = board.getPiece(j, i);
 
-                resId = lookupResource(piece);
-
                 ImageView imageView = new ImageView(this);
-                imageView.setBackgroundResource(resId);
+                if(j == xfinal && i == yFinal ) {
+                    imageView.setBackgroundResource(R.drawable.linea_de_llegada);
+                }
+                else{
+                    resId = lookupResource(piece);
+                    imageView.setBackgroundResource(resId);
+                }
                 TableRow.LayoutParams imageViewParams = new TableRow.LayoutParams();
                 imageViewParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
                 imageViewParams.height = ViewGroup.LayoutParams.MATCH_PARENT;
@@ -86,6 +94,7 @@ public class MazeBoardActivity extends AppCompatActivity
                 row.addView(imageView);
 
                 imageViews[(j%board.getHorizontalTileCount())+ board.getVerticalTileCount()*i] = imageView;
+
             }
         }
    }
@@ -111,7 +120,8 @@ public class MazeBoardActivity extends AppCompatActivity
                 R.drawable.m2lt,
                 R.drawable.m3r,
                 R.drawable.m3b,
-                R.drawable.m4};
+                R.drawable.m4
+        };
 
         return iconLookupTable[iconIndex];
     }

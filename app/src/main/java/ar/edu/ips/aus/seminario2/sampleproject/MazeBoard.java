@@ -20,8 +20,8 @@ public class MazeBoard {
 
     private int width = 0;
     private int height = 0;
-    private int exitX = 9;
-    private int exitY = 9;
+    private int exitX = 4;
+    private int exitY = 8;
 
     private List<BoardPiece> board = null;
 
