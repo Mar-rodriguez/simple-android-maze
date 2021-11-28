@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -119,7 +120,28 @@ public class Game {
         // update only local player
         MazeBoard board = Game.getInstance().getMazeBoard();
         this.getPlayer().move(board);
+        this.checkWinPlayer();
         sendPlayerData();
+   }
+
+
+   private void checkWinPlayer(){
+        Log.i("checkWinPlayer", "Llamado...");
+
+        double finalX = getMazeBoard().getExitX();
+       //Log.i("checkWinPlayer", String.valueOf(finalX));
+        double finalY = getMazeBoard().getExitY();
+       //Log.i("checkWinPlayer", String.valueOf(finalY));
+
+        double posPlayerX = getPlayer().getX();
+       //Log.i("checkWinPlayer", String.valueOf(posPlayerX));
+        double posPlayerY = getPlayer().getY();
+       //Log.i("checkWinPlayer", String.valueOf(posPlayerY));
+
+       if(finalX-0.5 <= posPlayerX && finalX+0.5 >= posPlayerX
+               && finalY-0.5 <= posPlayerY && finalY+0.5 >= posPlayerY){
+           Log.i("pepe", "ganaste");
+       }
    }
 
     private void sendPlayerData() {
