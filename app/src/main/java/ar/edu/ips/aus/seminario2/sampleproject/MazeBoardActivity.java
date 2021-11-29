@@ -78,13 +78,12 @@ public class MazeBoardActivity extends AppCompatActivity
                 BoardPiece piece = board.getPiece(j, i);
 
                 ImageView imageView = new ImageView(this);
+                resId = lookupResource(piece);
+                imageView.setBackgroundResource(resId);
                 if(j == xfinal && i == yFinal ) {
-                    imageView.setBackgroundResource(R.drawable.linea_de_llegada);
+                    imageView.setImageResource(R.drawable.door);
                 }
-                else{
-                    resId = lookupResource(piece);
-                    imageView.setBackgroundResource(resId);
-                }
+
                 TableRow.LayoutParams imageViewParams = new TableRow.LayoutParams();
                 imageViewParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
                 imageViewParams.height = ViewGroup.LayoutParams.MATCH_PARENT;
@@ -146,5 +145,6 @@ public class MazeBoardActivity extends AppCompatActivity
         }
 
     }
+
 
 }
