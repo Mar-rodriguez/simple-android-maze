@@ -133,15 +133,15 @@ public class Game {
         double finalY = getMazeBoard().getExitY();
        //Log.i("checkWinPlayer", String.valueOf(finalY));
 
-        double posPlayerX = getPlayer().getX();
+        double posPlayerX = getPlayer().getX() - 0.5;
        //Log.i("checkWinPlayer", String.valueOf(posPlayerX));
-        double posPlayerY = getPlayer().getY();
+        double posPlayerY = getPlayer().getY() - 0.5;
        //Log.i("checkWinPlayer", String.valueOf(posPlayerY));
 
-       if(finalX <= posPlayerX && finalX+0.5 >= posPlayerX
-               && finalY <= posPlayerY && finalY+0.5 >= posPlayerY){
+       if(finalX-0.5 <= posPlayerX && posPlayerX <= finalX+0.5
+               && finalY-0.5 <= posPlayerY && posPlayerY <= finalY+0.5) {
 
-           Log.i("pepe", "ganaste");
+           Log.i("player", "ganaste");
 
            finalize();
 
