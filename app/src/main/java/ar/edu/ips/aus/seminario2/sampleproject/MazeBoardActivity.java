@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.Toast;
 
 
 public class MazeBoardActivity extends AppCompatActivity
@@ -144,7 +145,13 @@ public class MazeBoardActivity extends AppCompatActivity
             Game.getInstance().pauseOrStart();
         }
 
+        if (Game.getInstance().getStatus() == GameMetadata.GameStatus.FINISHED){
+            showMessage();
+        }
+
     }
 
-
+    public void showMessage(){
+        Toast.makeText(this, "¡¡GANASTE!! Juego finalizado", Toast.LENGTH_LONG).show();
+    }
 }
